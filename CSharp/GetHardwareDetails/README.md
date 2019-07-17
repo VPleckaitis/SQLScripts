@@ -8,5 +8,5 @@ Usage : compile dll, include to you project.
 
 Full list of Wmi classes/propeties can be found on https://docs.microsoft.com/en-us/previous-versions//aa394084(v=vs.85)
 
-Some of them that might be useful :
+Look at example project for more info.
 
