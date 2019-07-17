@@ -63,25 +63,26 @@ namespace GetHWDetails
         /// <summary>
         /// Queries WMI for list of properties, and returns result in dictionary [string,string]
         /// </summary>
-        /// <param name="keyValuePairs">Dictionary of parameters</param>
+        /// <param name="properties">List of parameters</param>
         /// <returns>Results in dictionary, where key = "wmiClass:wmiProperty", value = result from wmi. All exceptions will be suppressed and value set to exception message</returns>
-        public Dictionary<string, string> GetMultiDetails(Dictionary<string,string> keyValuePairs)
+        public Dictionary<string, string> GetMultiDetails(List<string> properties)
         {
             GetHWinfo HW = new GetHWinfo();
             Dictionary<string, string> data = new Dictionary<string, string>();
-            foreach(var keyValuePair in keyValuePairs)
+            foreach(var property in properties)
             {
+                var values = property.Split(':');
                 string hwresult = "";
                 try
                 {
-                    hwresult = HW.identifier(keyValuePair.Key, keyValuePair.Value);
+                    hwresult = HW.identifier(values[0], values[1]);
                 }
                 catch (Exception ex)
                 {
                     hwresult = ex.Message;
                 }
 
-            data.Add(keyValuePair.Key+":"+ keyValuePair.Value, hwresult);
+            data.Add(property, hwresult);
             }
             return data;
         }
