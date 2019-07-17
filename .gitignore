@@ -5,3 +5,6 @@
 /.vs
 /CSharp/SMTPTester/.vs/SMTPTester/v16
 /CSharp/SMTPTester/SMTPTester/obj
+/CSharp/GetHardwareDetails/GetHWDetails/obj
+/CSharp/GetHardwareDetails/GetHWDetails/.vs/GetHWDetails/v16/Server/sqlite3
+/CSharp/GetHardwareDetails/GetHWDetails/.vs/GetHWDetails/v16
